@@ -1,0 +1,38 @@
+{% extends "master.html" %}
+
+{% include 'members/header_member.html' %}
+
+{% block content %}
+
+   <h3 id="titulo" class="text-center p-4 text-primary">Member in the Application</h3>
+   <p class="text-center p-4 text-primary">Click on Name see all details</p>
+    {% if msg %}
+        <div class="alert alert-success p-1" role="alert">
+             {{msg}}
+        </div>   
+    {% endif %} 
+   <div class="d-flex justify-content-center align-content-center pt-1 mx-1" id="">
+        <table class="table table-striped mx-5 px-5">
+
+        
+            
+            <tr> <!--header-->
+                <th> Member number</th>
+                <th> Name</th>
+                <th> Surname</th>
+                <th>joined date</th>
+                <th>Married</th>
+            </tr>
+            {% for member in mymembers %}
+            <tr>
+                <td>{{ member.id }}</td>
+                <td><a href="details/{{ member.slug }}">{{ member.firstname }}</a></td>
+                <td>{{ member.lastname }}</td>
+                <td>{{ member.joined_date }}</td>
+                <td>{{ member.married }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+   </div>  
+
+{% endblock %}

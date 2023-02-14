@@ -1,2 +1,2 @@
-# MyApp
-Conjuntos de aplicaciones en Fask y Django
+# MyAPP
+App's with frame of Python (django, Flask)

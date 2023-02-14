@@ -1,0 +1,33 @@
+{% extends "master.html" %}
+
+{% include 'members/header_member.html' %}
+
+{% block content %}
+
+
+<div class=" d-flex  justify-content-center align-content-center">
+    <ul style=" list-style-type: none;">
+
+        <hr>
+            <h4> Slug = {{mymembers.slug}}</h4>
+            <li> numero socio = {{mymembers.id}}</li>
+            <li> Name = {{mymembers.firstname}}</li>
+            <li> Surname = {{ mymembers.lastname }}</li> 
+            <li> data = {{ mymembers.joined_date}}</li> 
+            <li> married = {{mymembers.married}}</li>
+        <hr>
+        </ul>
+    </div>
+
+    <div>
+        <div class=" d-flex  justify-content-center align-content-center" >
+            <ul style=" list-style-type: none;">
+                <li><a  class="btn btn-danger" href="{% url 'delete_member' mymembers.slug %}" >Borrar Alumno</a></li>
+                <p></p>
+                <li><a class="btn btn-warning"  href="{% url 'update_member' mymembers.slug %} "> Actualizar Alumno</a></li>
+            </ul>
+       </div> 
+    </div>
+   
+
+{% endblock %} 

@@ -1,0 +1,16 @@
+
+
+
+Sala 5 8:01
+
+
+{% local filters %}
+<table class="mx-auto">
+            {% for field in query %}
+                <tr>
+                    <td class="col-6"><strong>{{ field }}:</strong></td> 
+                    <td class="col-6 text-end">{{ query|lookup:field }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+

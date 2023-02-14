@@ -1,0 +1,50 @@
+{% extends "master.html" %}
+
+{% block content %}
+
+   <h3 id="titulo" class="text-center p-4 text-danger">User in the Application</h3>
+   <!-- <h4 class="text-center p-4 text-danger"> {{ msg1 }}</h4> -->
+
+   <div class="d-flex justify-content-end">
+    <a class = "btn btn btn-success" href="{% url 'create_user' %}">Create User</a>
+   </div>
+   <hr>
+   
+    {% if msg %}
+        <div class="alert alert-primary" role="alert">
+        {{ msg }}
+        </div>
+    {% endif %}
+
+   <div class="d-flex justify-content-center align-content-center pt-1 mx-1" id="">
+    <table class=" table table-striped mx-auto p-5" >
+
+        <!-- <p>https://www.youtube.com/watch?v=34hjHbJ72xo&t=315s</p> -->
+        <!-- <p>https://www.youtube.com/watch?v=VwZq5JM1v7M</p> -->
+        <tr>
+            <th>id user</th>
+            <th>Usuario</th>
+            <th>Nombre de Usuario</th>
+            <th>Apellido de Usuario</th>
+            <th>Email de usuario</th>
+            <th>Telefono</th>
+            <th>Delete</th>
+            <th>Update</th>
+        </tr>
+        {% for x in all_users %}
+        <tr>
+            <td>{{x.id}}</td>
+            <td>{{ x.username }}</td>
+            <td><a href="edit_user/{{ x.id }}">{{ x.firstname }}</a></td>
+            <td>{{ x.lastname }}</td>
+            <td>{{ x.email }}</td>
+            <td>{{ x.phone }}</td>
+            <td><a class = "btn btn-danger" href="{% url 'delete_user' x.id %}">Delete</a></td>
+            <td><a class = "btn btn-primary" href="{% url 'edit_user' x.id %}">Update</a></td>
+            <!-- <td><a class = "btn btn-primary" href="/edit_user/{{ x.id }}">Update</a></td> -->
+        </tr>
+        {% endfor %}
+    </table>
+   </div>  
+
+{% endblock %}

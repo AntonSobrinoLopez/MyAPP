@@ -1,0 +1,15 @@
+campos [id, Username , Password , Firstname , Lastname , Email, Address , Phone]
+
+from members.models import User
+User1 = User(username='antonsl',password='anton123', firstname='Anton', lastname = 'Sobrino', email='anton@gmai.com', address='Olvido 35', phone='12334')
+User2 = User(username='marcob',password='marco123', firstname='Marco', lastname = 'Balerna', email='marco@gmai.com', address='Roger de Lluria 30', phone='111111')
+User3= User(username='sergiab',password='sergi123', firstname='Sergi', lastname = 'Abell0', email='sergi@gmai.com', address='tirso de molina s/n', phone='22222')
+User4 = User(username='olgsl',password='olg123', firstname='Olga', lastname = 'Sobrino', email='olga@gmai.com', address='Cornella 35', phone='33333')
+User5 = User(username='marisl',password='mari123', firstname='Maribel', lastname = 'Sobrino', email='mari@gmai.com', address='Cornella de abajo', phone='44444')
+User6 = User(username='rafasb',password='antno123', firstname='Rafael', lastname = 'Sobrino', email='rafa@gmai.com', address='Pozuelo 35', phone='555555')
+User7 = User(username='marials',password='maria123', firstname='Maria', lastname = 'Lopez', email='maria@gmai.com', address='sant ildelfonso 35', phone='66666')
+
+Users = [User1 ,User2 , User3, User4, User5, User6, User7]
+
+for x in Users:
+	x.save()

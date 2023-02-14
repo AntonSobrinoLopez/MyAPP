@@ -1,0 +1,26 @@
+{% extends "master.html" %}
+
+{% block content %}
+    {% if form.erros %}
+        <div class="alert alert-danger" role="alert">
+            <p>This is a danger alert-check it out</p>
+        </div>
+    {% endif %}
+    <h3 id="titulo" class="text-center p-4 text-primary">Update User {{ id_user }}</h3>
+    <form action="{% url 'update_user' x.id %}" method="POST">
+        {% csrf_token %}
+        {{form.as_p }}
+            {% if  msg %}
+                <div class="alert alert-danger" role="alert">
+                    <p>Updated User</p>
+                </div>
+            {% endif %}
+        <button type="submit" class="btn btn-prymar">Save</button>
+        <a href="{% url 'edit_user' x.id %}" class="btn btn-warning">Cancelar</a>
+
+    </form>
+
+
+{% endblock %}
+
+

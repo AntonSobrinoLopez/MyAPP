@@ -1,0 +1,11 @@
+ 1 - models -> User, Member, etc. -> models.py
+https://github.com/AntonSobrinoLopez/MyApp/blob/master/myapp_django/members/models.py
+
+2 - urls -> /members (lista), member/<int:id>, ...slug -> urls.py
+https://github.com/AntonSobrinoLopez/MyApp/blob/master/myapp_django/members/urls.py
+
+3 - vista genéricas * 
+4 - test * 
+5 - class MemberAdmin o similar -> modelo -> class modeloAdmin para el panel admin
+https://github.com/AntonSobrinoLopez/MyApp/blob/master/myapp_django/members/admin.py
+6 - templates -> .html -> comodín

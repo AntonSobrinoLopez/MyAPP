@@ -1,0 +1,14 @@
+{% extends "master.html" %}
+
+{% block content %}
+<h2 class="text-center p-4 text-primary">Seleciones una de las dos aplicaciones</h2>
+           <div class ="row align-items-center p-5  mx-auto" style="height: 70%" >
+                <div  class="mx-4 p-3 bg-primary bg-opacity-10 border border-primary  rounded-end col  h-75 d-flex align-items-center justify-content-center">
+                    <a href="{% url 'members' %}" class="btn btn-primary">Members</a>
+                </div>
+              
+                <div class="mx-4 p-3 bg-danger bg-opacity-10 border border-danger  rounded-end col h-75 d-flex align-items-center  justify-content-center">
+                    <a class="btn btn-danger" href="user/user_list/">Users</a>
+                </div>
+           </div> 
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "master.html" %}
+
+{% include 'members/header_member.html' %}
+
+{% block content %}
+
+<h3 id="titulo" class="text-center p-4 text-primary">Check it up and click</h3>
+{% if msg %}
+
+    <h3> {{ msg }}</h3>
+
+{%  else %}
+
+    <div class="d-flex align-content-center justify-content-center p-5">
+        <form action = "{% url 'update_member' slug %}" method = "POSt">
+            {% csrf_token %}
+            {{form.as_p }}
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+{% endif %}
+
+{% endblock %} 

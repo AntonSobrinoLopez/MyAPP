@@ -1,0 +1,26 @@
+{% extends "master.html" %}
+
+{% include 'Users/header_user.html' %}
+
+{%  block content %}
+
+<h3 id="titulo" class="text-center p-4 text-danger">User in the Application</h3>
+
+{% if msg %}
+    <div class="alert alert-danger" role="alert">
+        A simple danger alert—check it out!
+    </div>
+{% else %}
+    <div class="d-flex align-content-center justify-content-center p-5">
+       
+        <form action = "edit_user/{{ x.id }}" method = "GET">
+            {% csrf_token %}
+            {{form.as_p }}
+            <!-- <input type="submit" value="Submit"> -->
+            <a class="btn btn-success" href="{% url 'update_user' %}">Update</a>
+        </form>
+    </div>
+{% endif %}
+
+
+{% endblock %}

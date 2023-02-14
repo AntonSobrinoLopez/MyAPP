@@ -1,0 +1,12 @@
+<!-- createThanks.html  -->
+
+{% extends 'base.html' %}
+
+{% block main %}
+    <h2>¡Gracias por editar una pregunta!</h2>
+    <ul>
+        <li>Has editado la pregunta : <b> {{ id }} </b></li>
+        <li>Tu pregunta es : <b> {{ question }} </b></li>
+        <li>Tu respuesta es : <b> {{ answer }} </b></li>
+    </ul>
+{% endblock %}

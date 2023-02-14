@@ -1,0 +1,19 @@
+{% extends "master.html" %}
+{% include 'Users/header_user.html' %}
+
+{% block content %}
+<h3 id="titulo" class="text-center p-4 text-danger">User in the Application</h3>
+    <ul>
+        {% for x in all_users %}
+            <hr>
+            <h4>{{ x.username }}</h4>
+            <hr>
+            <li><a href="detail_user_list/{{ x.username }}"></a>{{ x.firstname }}</li>
+            <li>{{ x.lastname }}</li>
+            <li>{{ x.email }}</li>
+            <li>{{ x.phone }}</li>
+            <hr>
+        {% endfor %}
+       
+    </ul>
+{% endblock %}

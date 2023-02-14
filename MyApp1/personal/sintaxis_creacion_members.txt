@@ -1,0 +1,66 @@
+py manage.py makemigrations members
+py manage.py migrate
+py manage.py shell
+from members.models import Member
+
+member0 = Member(firstname='Anton',lastname='Sobrino')
+member1 = Member(firstname='Sergi',lastname='Abello')
+member2 = Member(firstname='Marco',lastname='Balerna')
+member3 = Member(firstname='Tobias', lastname='Refsnes')
+member4 = Member(firstname='Linus', lastname='Refsnes')
+member5 = Member(firstname='Lene', lastname='Refsnes')
+member6 = Member(firstname='Stale', lastname='Refsnes')
+member7 = Member(firstname='Jane', lastname='Doe')
+
+member_list=[member0,member1,member2,member3,member4,member5,member6,member7]
+
+for x in member_list:
+>>>   x.save()
+
+
+
+Member.objects.all().values()
+
+##########################3 insert data
+from members.models import Member
+x = Member.objects.all()[0]
+x.phone = 5551234
+x.joined_date = '2022-01-05'
+x.save()
+
+x = Member.objects.all()[1]
+x.phone = 5555555
+x.joined_date = '2022-02-05'
+x.save()
+
+x = Member.objects.all()[2]
+x.phone = 6666666
+x.joined_date = '2022-02-10'
+x.save()
+
+x = Member.objects.all()[3]
+x.phone = 777777
+x.joined_date = '2022-03-08'
+x.married = False
+x.save()
+
+x = Member.objects.all()[4]
+x.phone = 888888
+x.joined_date = '2022-07-08'
+x.married = False
+x.save()
+
+x = Member.objects.all()[5]
+x.phone = 888888
+x.joined_date = '2022-08-08'
+x.save()
+
+x = Member.objects.all()[6]
+x.phone = 9999999
+x.joined_date = '2022-10-08'
+x.save()
+
+x = Member.objects.all()[7]
+x.phone = 1111111
+x.joined_date = '2022-11-01'
+x.save()

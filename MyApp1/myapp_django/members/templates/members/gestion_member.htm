@@ -1,0 +1,27 @@
+{% extends "master.html" %}
+
+{% include 'members/header_member.html' %}
+
+{% block content %}
+
+<div>
+
+{% if msg %}
+    <h3>{{msg}}</h3>
+{% endif %}
+
+{% if error %}
+    <h3>{{error}}</h3>
+{% endif %}
+
+{% if mymembers %}
+    <h1>esto</h1>
+{% endif %}
+
+{% if id %}
+    <h1>msg1</h1>
+{% endif %}
+
+</div>
+
+{% endblock %}
